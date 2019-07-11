@@ -1,0 +1,6 @@
+framework module Pods_XLAX {
+  umbrella header "Pods-XLAX-umbrella.h"
+
+  export *
+  module * { export * }
+}

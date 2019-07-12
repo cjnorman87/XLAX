@@ -22,8 +22,6 @@ class VideoViewController: UIViewController, UITextFieldDelegate {
     var player: AVPlayer?
     var playerController : AVPlayerViewController?
     
-    
-    
     init(videoURL: URL) {
         self.videoURL = videoURL
         super.init(nibName: nil, bundle: nil)
@@ -123,15 +121,20 @@ class VideoViewController: UIViewController, UITextFieldDelegate {
     }
     
     @objc func post() {
-        let theFile = SwiftyCamViewController.key.file
+        let theFile = videoURL.absoluteURL
+//        let theFile = SwiftyCamViewController.key.file
         let filename = NSUUID().uuidString
         let ref = Storage.storage().reference().child("posts").child(filename)
-        _ = ref.putFile(from: theFile!, metadata: nil) { metadata, error in
+        _ = ref.putFile(from: theFile, metadata: nil) { metadata, error in
             if let error = error{
                 print("CJ error: error \(error)")
             } else{
-                guard let downloadURL = metadata!.downloadURL()?.absoluteString else { return }
-                self.saveToDataBaseWithImageURL(urlString: downloadURL)
+                ref.downloadURL(completion: { (url, err) in
+                    guard let downloadURL = url?.absoluteString else { return }
+                    self.saveToDataBaseWithImageURL(urlString: downloadURL)
+                })
+//                guard let downloadURL = metadata!.downloadURL()?.absoluteString else { return }
+                
             }
         }
     }

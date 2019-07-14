@@ -47,7 +47,7 @@ class LoginController: UIViewController {
     let loginButton: UIButton = {
         let button = UIButton(type: .system)
         button.setTitle("Log In", for: .normal)
-        button.backgroundColor = UIColor.rgb(red: 169, green: 169, blue: 248)
+        button.backgroundColor = UIColor.rgb(red: 136, green: 206, blue: 235)
         button.layer.cornerRadius = 8
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 24)
         button.setTitleColor(.white, for: .normal)
@@ -58,10 +58,11 @@ class LoginController: UIViewController {
     
     let signUpButton: UIButton = {
         let button = UIButton(type: .system)
-        button.setTitle("Sign Up", for: .normal)
+        let attributedTitle = NSMutableAttributedString(string: "Don't have an account? ", attributes: [NSAttributedString.Key.foregroundColor : UIColor.lightGray])
+        attributedTitle.append(NSAttributedString(string: "Sign Up", attributes: [NSAttributedString.Key.foregroundColor : UIColor.rgb(red: 136, green: 206, blue: 235)]))
+        button.setAttributedTitle(attributedTitle, for: .normal)
         button.layer.cornerRadius = 8
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 14)
-        button.setTitleColor(UIColor.rgb(red: 169, green: 169, blue: 248), for: .normal)
         button.addTarget(self, action: #selector(handleShowSignUp), for: .touchUpInside)
         button.isEnabled = true
         return button
@@ -72,7 +73,7 @@ class LoginController: UIViewController {
         button.setTitle("Forgot Password", for: .normal)
         button.layer.cornerRadius = 8
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 10)
-        button.setTitleColor(UIColor.rgb(red: 169, green: 169, blue: 248), for: .normal)
+        button.setTitleColor(UIColor.rgb(red: 136, green: 206, blue: 235), for: .normal)
         button.addTarget(self, action: #selector(handlePassReset), for: .touchUpInside)
         button.isEnabled = false
         return button
@@ -80,14 +81,9 @@ class LoginController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        view.addSubview(logoContainerView)
-        logoContainerView.anchor(top: view.topAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 100, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: 150)
-        
-        navigationController?.isNavigationBarHidden = true
-        
-        view.backgroundColor = .white
-        
+        setupController()
+        setupLogo()
+        setupSignUpButton()
         setupInputFields()
     }
     
@@ -104,10 +100,10 @@ class LoginController: UIViewController {
         let isFormValid = emailTextField.text?.count ?? 0 > 0 && passwordTextField.text?.count ?? 0 > 0
         if isFormValid{
             loginButton.isEnabled = true
-            loginButton.backgroundColor = UIColor.rgb(red: 103, green: 174, blue: 202)
-        }else {
+            loginButton.backgroundColor = UIColor.rgb(red: 136, green: 206, blue: 235)
+        } else {
             loginButton.isEnabled = false
-            loginButton.backgroundColor =  UIColor.rgb(red: 103, green: 174, blue: 202)
+            loginButton.backgroundColor =  UIColor.rgb(red: 130, green: 225, blue: 235)
         }
     }
     
@@ -150,15 +146,36 @@ class LoginController: UIViewController {
         navigationController?.pushViewController(signUpController, animated: true)
     }
     
+    fileprivate func setupSignUpButton() {
+        view.addSubview(signUpButton)
+        signUpButton.anchor(top: nil, leading: view.leadingAnchor, bottom: view.bottomAnchor, trailing: view.trailingAnchor, padding: UIEdgeInsets(top: 0, left: 0, bottom: 20, right: 0), size: CGSize(width: 0, height: 50))
+    }
+    
+    fileprivate func setupLogo() {
+        view.addSubview(logoContainerView)
+        logoContainerView.anchor(top: view.topAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 50, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: 150)
+    }
+    
+    fileprivate func setupController() {
+        navigationController?.isNavigationBarHidden = true
+        view.backgroundColor = .white
+    }
+    
+    
     fileprivate func setupInputFields() {
-        let stackView = UIStackView(arrangedSubviews: [emailTextField,passwordTextField,loginButton,signUpButton,forgotPassButton])
+        let stackView = UIStackView(arrangedSubviews: [emailTextField,passwordTextField,loginButton, forgotPassButton])
         stackView.axis = .vertical
         stackView.spacing = 30
         stackView.distribution = .fillEqually
         
         view.addSubview(stackView)
-        stackView.anchor(top: logoContainerView.bottomAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 50, paddingLeft: 40, paddingBottom: 0, paddingRight: 40, width: 0, height: 400)
+        stackView.anchor(top: logoContainerView.bottomAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 50, paddingLeft: 40, paddingBottom: 0, paddingRight: 40, width: 0, height: 300)
         
     }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        view.endEditing(true)
+    }
+
 }
 

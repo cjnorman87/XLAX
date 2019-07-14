@@ -58,13 +58,13 @@ class TestProfile : UITableViewController, EducationCellDelegate, ExperienceCell
         userProfileImage.heightAnchor.constraint(equalToConstant: 160).isActive = true
         userProfileImage.widthAnchor.constraint(equalToConstant: 160).isActive = true
         view.addSubview(nameLabel)
-        nameLabel.anchors(top: userProfileImage.bottomAnchor, bottom: nil, right: nil, left: nil, paddingTop: 10, paddingBottom: 0, paddingRight: 0, paddingLeft: 0, height: 20, width: 0)
+        nameLabel.anchor(top: userProfileImage.bottomAnchor, bottom: nil, right: nil, left: nil, paddingTop: 10, paddingBottom: 0, paddingRight: 0, paddingLeft: 0, height: 20, width: 0)
         nameLabel.centerXAnchor.constraint(equalTo: userProfileImage.centerXAnchor).isActive = true
         view.addSubview(locationLabel)
-        locationLabel.anchors(top: nameLabel.bottomAnchor, bottom: nil, right: nil, left: nil, paddingTop: 8, paddingBottom: 0, paddingRight: 0, paddingLeft: 0, height: 20, width: 0)
+        locationLabel.anchor(top: nameLabel.bottomAnchor, bottom: nil, right: nil, left: nil, paddingTop: 8, paddingBottom: 0, paddingRight: 0, paddingLeft: 0, height: 20, width: 0)
         locationLabel.centerXAnchor.constraint(equalTo: nameLabel.centerXAnchor).isActive  = true
         view.addSubview(locationIcon)
-        locationIcon.anchors(top: locationLabel.topAnchor, bottom: nil, right: locationLabel.leftAnchor, left: nil, paddingTop: 0, paddingBottom: 0, paddingRight: -5, paddingLeft: 0, height: 20, width: 20)
+        locationIcon.anchor(top: locationLabel.topAnchor, bottom: nil, right: locationLabel.leftAnchor, left: nil, paddingTop: 0, paddingBottom: 0, paddingRight: -5, paddingLeft: 0, height: 20, width: 20)
         return view
     }()
     

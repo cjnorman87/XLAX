@@ -14,6 +14,7 @@ class camController: SwiftyCamViewController, SwiftyCamViewControllerDelegate {
     
     var flipCameraButton: UIButton!
     var flashButton: UIButton!
+//    var capButton: SwiftyCamButton!
     var capButton: SwiftyRecordButton!
     var cancelButton: UIButton!
     

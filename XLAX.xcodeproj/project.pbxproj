@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1979F63722D9886300491C97 /* ViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1979F63622D9886300491C97 /* ViewExtensions.swift */; };
+		1979F63F22D9A0FF00491C97 /* SwiftyRecordButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1979F63E22D9A0FF00491C97 /* SwiftyRecordButton.swift */; };
+		1979F64622DA5D8100491C97 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1979F64522DA5D8100491C97 /* GoogleService-Info.plist */; };
 		80C2A3DB156130098C3CD3DD /* Pods_XLAX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2699F1DA1142FA82822E528 /* Pods_XLAX.framework */; };
 		D7118E4B22D6119100F9CB2F /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7118E4A22D6119100F9CB2F /* MainTabBarController.swift */; };
 		D7118E5C22D6124B00F9CB2F /* JobsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7118E4E22D6124B00F9CB2F /* JobsController.swift */; };
@@ -23,7 +26,6 @@
 		D7118E7122D6126D00F9CB2F /* CustomCheckCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7118E6922D6126D00F9CB2F /* CustomCheckCell.swift */; };
 		D7118E7222D6126D00F9CB2F /* DynamicHeightCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7118E6A22D6126D00F9CB2F /* DynamicHeightCollectionView.swift */; };
 		D7118E7322D6126D00F9CB2F /* HoldCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7118E6B22D6126D00F9CB2F /* HoldCode.swift */; };
-		D7118E7422D6126D00F9CB2F /* DatePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7118E6C22D6126D00F9CB2F /* DatePickerView.swift */; };
 		D7118E7522D6126D00F9CB2F /* BaseListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7118E6D22D6126D00F9CB2F /* BaseListController.swift */; };
 		D7118E7622D6126D00F9CB2F /* SegmentBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7118E6E22D6126D00F9CB2F /* SegmentBar.swift */; };
 		D7118E7722D6126D00F9CB2F /* StackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7118E6F22D6126D00F9CB2F /* StackView.swift */; };
@@ -59,10 +61,12 @@
 		D7E20D0B22D58635006A2031 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D7E20D0922D58635006A2031 /* Main.storyboard */; };
 		D7E20D0D22D58636006A2031 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D7E20D0C22D58636006A2031 /* Assets.xcassets */; };
 		D7E20D1022D58636006A2031 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D7E20D0E22D58636006A2031 /* LaunchScreen.storyboard */; };
-		D7F3C09022D5FF5F00C6A2A5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D7F3C08F22D5FF5F00C6A2A5 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1979F63622D9886300491C97 /* ViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtensions.swift; sourceTree = "<group>"; };
+		1979F63E22D9A0FF00491C97 /* SwiftyRecordButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftyRecordButton.swift; sourceTree = "<group>"; };
+		1979F64522DA5D8100491C97 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		7A39A4C0D268EBEB02010A7A /* Pods-XLAX.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XLAX.release.xcconfig"; path = "Target Support Files/Pods-XLAX/Pods-XLAX.release.xcconfig"; sourceTree = "<group>"; };
 		9CE9560F1652A6BF79CCD246 /* Pods-XLAX.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XLAX.debug.xcconfig"; path = "Target Support Files/Pods-XLAX/Pods-XLAX.debug.xcconfig"; sourceTree = "<group>"; };
 		D2699F1DA1142FA82822E528 /* Pods_XLAX.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_XLAX.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -81,7 +85,6 @@
 		D7118E6922D6126D00F9CB2F /* CustomCheckCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCheckCell.swift; sourceTree = "<group>"; };
 		D7118E6A22D6126D00F9CB2F /* DynamicHeightCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DynamicHeightCollectionView.swift; sourceTree = "<group>"; };
 		D7118E6B22D6126D00F9CB2F /* HoldCode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HoldCode.swift; sourceTree = "<group>"; };
-		D7118E6C22D6126D00F9CB2F /* DatePickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatePickerView.swift; sourceTree = "<group>"; };
 		D7118E6D22D6126D00F9CB2F /* BaseListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseListController.swift; sourceTree = "<group>"; };
 		D7118E6E22D6126D00F9CB2F /* SegmentBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegmentBar.swift; sourceTree = "<group>"; };
 		D7118E6F22D6126D00F9CB2F /* StackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StackView.swift; sourceTree = "<group>"; };
@@ -119,7 +122,6 @@
 		D7E20D0C22D58636006A2031 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D7E20D0F22D58636006A2031 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D7E20D1122D58636006A2031 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D7F3C08F22D5FF5F00C6A2A5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -207,12 +209,13 @@
 			isa = PBXGroup;
 			children = (
 				D71FB56922D618D600145103 /* CustomImageView.swift */,
+				1979F63E22D9A0FF00491C97 /* SwiftyRecordButton.swift */,
 				D71FB56A22D618D600145103 /* Extensions.swift */,
+				1979F63622D9886300491C97 /* ViewExtensions.swift */,
 				D71FB56C22D618D600145103 /* FirebaseUtils.swift */,
 				D71FB56B22D618D600145103 /* Post.swift */,
 				D7118E6D22D6126D00F9CB2F /* BaseListController.swift */,
 				D7118E6822D6126D00F9CB2F /* CustomCellsEureka */,
-				D7118E6C22D6126D00F9CB2F /* DatePickerView.swift */,
 				D7118E6A22D6126D00F9CB2F /* DynamicHeightCollectionView.swift */,
 				D7118E6B22D6126D00F9CB2F /* HoldCode.swift */,
 				D7118E6E22D6126D00F9CB2F /* SegmentBar.swift */,
@@ -334,7 +337,7 @@
 				D7E20D0C22D58636006A2031 /* Assets.xcassets */,
 				D7E20D0E22D58636006A2031 /* LaunchScreen.storyboard */,
 				D7E20D1122D58636006A2031 /* Info.plist */,
-				D7F3C08F22D5FF5F00C6A2A5 /* GoogleService-Info.plist */,
+				1979F64522DA5D8100491C97 /* GoogleService-Info.plist */,
 				D71FB59122D61B2A00145103 /* Models */,
 				D7118E6722D6125700F9CB2F /* Utils */,
 			);
@@ -402,7 +405,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D7E20D1022D58636006A2031 /* LaunchScreen.storyboard in Resources */,
-				D7F3C09022D5FF5F00C6A2A5 /* GoogleService-Info.plist in Resources */,
+				1979F64622DA5D8100491C97 /* GoogleService-Info.plist in Resources */,
 				D7E20D0D22D58636006A2031 /* Assets.xcassets in Resources */,
 				D7E20D0B22D58635006A2031 /* Main.storyboard in Resources */,
 			);
@@ -468,6 +471,7 @@
 				D7118E9222D6136100F9CB2F /* TestExperienceCell.swift in Sources */,
 				D7118E7322D6126D00F9CB2F /* HoldCode.swift in Sources */,
 				D71FB56D22D618D600145103 /* CustomImageView.swift in Sources */,
+				1979F63F22D9A0FF00491C97 /* SwiftyRecordButton.swift in Sources */,
 				D7118E7222D6126D00F9CB2F /* DynamicHeightCollectionView.swift in Sources */,
 				D7118E6022D6124B00F9CB2F /* JobSearchController.swift in Sources */,
 				D7118E6322D6124B00F9CB2F /* TestProfile.swift in Sources */,
@@ -497,9 +501,9 @@
 				D7118E9422D6136100F9CB2F /* ExperienceInformationCell.swift in Sources */,
 				D7118E9922D6136100F9CB2F /* JobsCell.swift in Sources */,
 				D71FB56F22D618D600145103 /* Post.swift in Sources */,
-				D7118E7422D6126D00F9CB2F /* DatePickerView.swift in Sources */,
 				D7E20D0622D58635006A2031 /* AppDelegate.swift in Sources */,
 				D7118E4B22D6119100F9CB2F /* MainTabBarController.swift in Sources */,
+				1979F63722D9886300491C97 /* ViewExtensions.swift in Sources */,
 				D7118E5E22D6124B00F9CB2F /* SavedController.swift in Sources */,
 				D7118E6422D6124B00F9CB2F /* EditEducationController.swift in Sources */,
 				D7118E9622D6136100F9CB2F /* ExperienceTableCell.swift in Sources */,
@@ -652,13 +656,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 2S4SKBX3J4;
+				DEVELOPMENT_TEAM = 73LBTUA3W2;
 				INFOPLIST_FILE = XLAX/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = getmoney.inc.XLAX;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jacoreybrown.peek;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -671,13 +675,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 2S4SKBX3J4;
+				DEVELOPMENT_TEAM = 73LBTUA3W2;
 				INFOPLIST_FILE = XLAX/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = getmoney.inc.XLAX;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jacoreybrown.peek;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

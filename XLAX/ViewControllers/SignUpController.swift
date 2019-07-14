@@ -10,8 +10,7 @@ import UIKit
 import Firebase
 import FirebaseAuth
 
-class SignUpController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-    
+class SignUpController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
     var isSwitchOn: Bool = false
     
     let signUpLabel: UILabel = {
@@ -29,12 +28,13 @@ class SignUpController: UIViewController, UIImagePickerControllerDelegate, UINav
         Tf.borderStyle = .roundedRect
         Tf.font = UIFont.systemFont(ofSize: 14)
         Tf.addTarget(self, action: #selector(handleTextInputChange), for: .editingChanged)
+        Tf.returnKeyType = .continue
         return Tf
     }()
     
     let usernameTextField: UITextField = {
         let Tf = UITextField()
-        Tf.placeholder = "username"
+        Tf.placeholder = "Name"
         Tf.backgroundColor = UIColor(white:0, alpha: 0.03)
         Tf.borderStyle = .roundedRect
         Tf.font = UIFont.systemFont(ofSize: 14)
@@ -50,6 +50,7 @@ class SignUpController: UIViewController, UIImagePickerControllerDelegate, UINav
         Tf.borderStyle = .roundedRect
         Tf.font = UIFont.systemFont(ofSize: 14)
         Tf.addTarget(self, action: #selector(handleTextInputChange), for: .editingChanged)
+        Tf.returnKeyType = .done
         return Tf
     }()
     
@@ -93,6 +94,8 @@ class SignUpController: UIViewController, UIImagePickerControllerDelegate, UINav
         return sw
     }()
     
+    let chooseState = UILabel(text: "", font: UIFont.systemFont(ofSize: 14))
+    
     let cancelButton: UIButton = {
         let button = UIButton(type: .system)
         button.setImage(#imageLiteral(resourceName: "Cancel").withRenderingMode(.alwaysOriginal), for: .normal)
@@ -102,15 +105,9 @@ class SignUpController: UIViewController, UIImagePickerControllerDelegate, UINav
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.addSubview(cancelButton)
-        cancelButton.anchor(top: view.topAnchor, left: view.leftAnchor, bottom: nil, right: nil, paddingTop: 30, paddingLeft: 30, paddingBottom: 0, paddingRight: 0, width: 0, height: 50)
-        
-        view.backgroundColor = .white
-        
-        view.addSubview(signUpLabel)
-        signUpLabel.anchor(top: view.topAnchor, left: nil, bottom: nil, right: nil, paddingTop: 40, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 140, height: 140)
-        signUpLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        
+        setupController()
+        setupCancelButton()
+        setupSignUpLabel()
         setupInputFields(isItOn: false)
     }
     
@@ -207,37 +204,73 @@ class SignUpController: UIViewController, UIImagePickerControllerDelegate, UINav
     
     fileprivate func setupInputFields(isItOn: Bool) {
         if isItOn {
-            hideFields()
-        } else {
             showFields()
+        } else {
+            hideFields()
         }
     }
     
     fileprivate func showFields() {
-        let stackView = UIStackView(arrangedSubviews: [usernameTextField,emailTextField,PhoneTextField,passwordTextField,companyTextField,profileSwitch,signUpButton])
+        if(profileSwitch.isOn) {
+            chooseState.text = "Sign up as searcher"
+            chooseState.textColor = UIColor.rgb(red: 136, green: 206, blue: 235)
+        }
+        let stackView = UIStackView(arrangedSubviews: [usernameTextField,emailTextField,PhoneTextField,passwordTextField,companyTextField,HorizontalStackView(arrangedSubviews: [chooseState,profileSwitch], spacing: 20),signUpButton])
         PhoneTextField.isHidden = false
         companyTextField.isHidden = false
-        
+        profileSwitch.anchor(top: nil, leading: nil, bottom: nil, trailing: stackView.trailingAnchor, padding: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 15))
         stackView.distribution = .fillEqually
         stackView.axis = .vertical
         stackView.spacing = 40
-        
         view.addSubview(stackView)
-        
-        stackView.anchor(top: signUpLabel.bottomAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 20, paddingLeft: 40, paddingBottom: 0, paddingRight: 40, width: 0, height: 500)
+        stackView.anchor(top: signUpLabel.bottomAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 20, paddingLeft: 40, paddingBottom: 0, paddingRight: 40, width: 0, height: 550)
     }
     
     fileprivate func hideFields() {
-        let stackView = UIStackView(arrangedSubviews: [usernameTextField,emailTextField,PhoneTextField,passwordTextField,companyTextField,profileSwitch,signUpButton])
+        if(profileSwitch.isOn == false) {
+            chooseState.text = "Sign up as a recruiter!"
+            chooseState.textColor = UIColor.rgb(red: 136, green: 206, blue: 235)
+        }
+        let stackView = UIStackView(arrangedSubviews: [usernameTextField,emailTextField,PhoneTextField,passwordTextField,companyTextField,HorizontalStackView(arrangedSubviews: [chooseState,profileSwitch], spacing: 20),signUpButton])
         PhoneTextField.isHidden = true
         companyTextField.isHidden = true
-        
         stackView.distribution = .fillEqually
         stackView.axis = .vertical
         stackView.spacing = 40
-        
         view.addSubview(stackView)
-        
-        stackView.anchor(top: signUpLabel.bottomAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 50, paddingLeft: 40, paddingBottom: 0, paddingRight: 40, width: 0, height: 500)
+        stackView.anchor(top: signUpLabel.bottomAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 50, paddingLeft: 40, paddingBottom: 0, paddingRight: 40, width: 0, height: 400)
     }
+    
+    fileprivate func setupCancelButton() {
+        view.addSubview(cancelButton)
+        cancelButton.anchor(top: view.topAnchor, left: view.leftAnchor, bottom: nil, right: nil, paddingTop: 30, paddingLeft: 30, paddingBottom: 0, paddingRight: 0, width: 0, height: 50)
+    }
+    
+    fileprivate func setupSignUpLabel() {
+        view.addSubview(signUpLabel)
+        signUpLabel.anchor(top: view.topAnchor, left: nil, bottom: nil, right: nil, paddingTop: 40, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 140, height: 140)
+        signUpLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+    }
+    
+    fileprivate func setupController() {
+         view.backgroundColor = .white
+        passwordTextField.delegate = self
+        emailTextField.delegate = self
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        view.endEditing(true)
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField == emailTextField {
+        }
+        if textField == passwordTextField {
+            print("text field should return is being called")
+            passwordTextField.returnKeyType = .done
+            passwordTextField.resignFirstResponder()
+        }
+        return true
+    }
+    
 }

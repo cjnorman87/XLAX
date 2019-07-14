@@ -17,13 +17,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
+        FirebaseApp.configure()
+        
         window = UIWindow()
         window?.rootViewController = MainTabBarViewController()
-        
         UINavigationBar.appearance().barTintColor = UIColor.rgb(red: 136, green: 206, blue: 235)
         UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.white]
-        
-        FirebaseApp.configure()
         return true
     }
 

@@ -48,7 +48,7 @@ class ProfileSummaryCell : UICollectionViewCell, UITableViewDelegate, UITableVie
     
     func setupTitleLabel() {
         addSubview(titleLabel)
-        titleLabel.anchors(top: topAnchor, bottom: nil, right: nil, left: leftAnchor, paddingTop: 3, paddingBottom: 0, paddingRight: 0, paddingLeft: 5, height: 50, width: frame.width)
+        titleLabel.anchor(top: topAnchor, bottom: nil, right: nil, left: leftAnchor, paddingTop: 3, paddingBottom: 0, paddingRight: 0, paddingLeft: 5, height: 50, width: frame.width)
     }
     
     func setupTableView() {

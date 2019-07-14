@@ -11,6 +11,7 @@ import AVFoundation
 import AVKit
 import Firebase
 import SwiftyCam
+import FirebaseStorage
 
 class VideoViewController: UIViewController, UITextFieldDelegate {
     

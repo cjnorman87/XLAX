@@ -89,7 +89,7 @@ class JobsCell : UICollectionViewCell {
     
     func setupPostingIcon() {
         addSubview(postingIcon)
-        postingIcon.anchors(top: nil, bottom: nil, right: nil, left: leftAnchor, paddingTop: 0, paddingBottom: 0, paddingRight: 0, paddingLeft: 20, height: 60, width: 60)
+        postingIcon.anchor(top: nil, bottom: nil, right: nil, left: leftAnchor, paddingTop: 0, paddingBottom: 0, paddingRight: 0, paddingLeft: 20, height: 60, width: 60)
         postingIcon.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
     
         postingIcon.isUserInteractionEnabled = true
@@ -100,22 +100,22 @@ class JobsCell : UICollectionViewCell {
     
     func setupPostingTitle() {
         addSubview(postingTitle)
-        postingTitle.anchors(top: postingIcon.topAnchor, bottom: nil, right: nil, left: postingIcon.leftAnchor, paddingTop: 10, paddingBottom: 0, paddingRight: 0, paddingLeft: 75, height: 0, width: 0)
+        postingTitle.anchor(top: postingIcon.topAnchor, bottom: nil, right: nil, left: postingIcon.leftAnchor, paddingTop: 10, paddingBottom: 0, paddingRight: 0, paddingLeft: 75, height: 0, width: 0)
     }
     
     func setupJobType() {
         addSubview(jobType)
-        jobType.anchors(top: postingTitle.topAnchor, bottom: nil, right: nil, left: postingTitle.leftAnchor, paddingTop: 15, paddingBottom: 0, paddingRight: 0, paddingLeft: 0, height: 0, width: 0)
+        jobType.anchor(top: postingTitle.topAnchor, bottom: nil, right: nil, left: postingTitle.leftAnchor, paddingTop: 15, paddingBottom: 0, paddingRight: 0, paddingLeft: 0, height: 0, width: 0)
     }
     
     func setupSalaryTitle() {
         addSubview(salaryLabel)
-        salaryLabel.anchors(top: jobType.topAnchor, bottom: nil, right: nil, left: jobType.leftAnchor, paddingTop: 15, paddingBottom: 0, paddingRight: 0, paddingLeft: 0, height: 0, width: 0)
+        salaryLabel.anchor(top: jobType.topAnchor, bottom: nil, right: nil, left: jobType.leftAnchor, paddingTop: 15, paddingBottom: 0, paddingRight: 0, paddingLeft: 0, height: 0, width: 0)
     }
     
     func setupLatestTimePosting() {
         addSubview(latestTimePosting)
-        latestTimePosting.anchors(top: postingIcon.topAnchor, bottom: nil, right: rightAnchor, left: nil, paddingTop: 5, paddingBottom: 0, paddingRight: -5, paddingLeft: 0, height: 0, width: 0)
+        latestTimePosting.anchor(top: postingIcon.topAnchor, bottom: nil, right: rightAnchor, left: nil, paddingTop: 5, paddingBottom: 0, paddingRight: -5, paddingLeft: 0, height: 0, width: 0)
 
     }
     

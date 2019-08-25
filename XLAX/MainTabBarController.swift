@@ -23,6 +23,7 @@ class MainTabBarViewController: UITabBarController, UITabBarControllerDelegate {
             }
             return
         }
+        //setupRecTabBar()
         setupTabBar()
     }
     
@@ -30,15 +31,15 @@ class MainTabBarViewController: UITabBarController, UITabBarControllerDelegate {
         viewControllers = [
             createNavBarController(viewController: JobSearchController(), unselectedImage: "search_unselected", selectedImage: "search_selected"),
             createNavBarController(viewController: JobsController(), unselectedImage: "like_unselected", selectedImage: "like_selected"),
-            createNavBarController(viewController: TestProfile(), unselectedImage: "profile_unselected", selectedImage: "profile_selected")
+            createNavBarController(viewController: ProfileController(), unselectedImage: "profile_unselected", selectedImage: "profile_selected")
         ]
     }
     
     func setupRecTabBar() {
         viewControllers = [
-            createNavBarController(viewController: JobSearchController(), unselectedImage: "search_unselected", selectedImage: "search_selected"),
+            createNavBarController(viewController: JobPostings(), unselectedImage: "search_unselected", selectedImage: "search_selected"),
             createNavBarController(viewController: camController(), unselectedImage: "like_unselected", selectedImage: "like_selected"),
-            createNavBarController(viewController: TestProfile(), unselectedImage: "profile_unselected", selectedImage: "profile_selected")
+            createNavBarController(viewController: RecruiterProfile(), unselectedImage: "profile_unselected", selectedImage: "profile_selected")
         ]
     }
     

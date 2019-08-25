@@ -8,6 +8,9 @@
 
 import Foundation
 
+
+//   UIFont(name: "SFProRounded-Bold", size: 12)
+
 //this code is code used to code a job search bar with a camera in the top right of the navigation bar for the purposes of giving job searchers the ability to use the camera to upload to their profile
 
 //let jobSearchBar : UISearchBar = {
@@ -481,6 +484,27 @@ class JobsController : BaseListController, UICollectionViewDelegateFlowLayout {
         view.addSubview(segmentBar)
         segmentBar.anchor(top: view.topAnchor, leading: view.leadingAnchor, bottom: nil, trailing: view.trailingAnchor, padding: UIEdgeInsets(top: 80, left: 0, bottom: 0, right: 0), size: CGSize(width: view.frame.width, height: 50))
     }
+ 
+ //code for dynamically sizing cells. Tableview with collectionview within table view cells
+ 
+ func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+ let dummyCell = ExperienceInformationCell(frame: CGRect(x: 0, y: 0, width: frame.width - 10 * 2, height: 1000))
+ dummyCell.layoutIfNeeded()
+ 
+ let estimatedSize = dummyCell.systemLayoutSizeFitting(CGSize(width: frame.width - 10 * 2, height: 1000))
+ return CGSize(width: estimatedSize.width, height: estimatedSize.height)
+ }
+ 
+ func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {
+ return CGSize(width: frame.width - 10 * 2 , height: 75)
+ }
+ 
+ override func systemLayoutSizeFitting(_ targetSize: CGSize, withHorizontalFittingPriority horizontalFittingPriority: UILayoutPriority, verticalFittingPriority: UILayoutPriority) -> CGSize {
+ self.collectionView.frame = CGRect(x: 0, y: 0, width: targetSize.width, height: 1000)
+ self.collectionView.layoutIfNeeded()
+ 
+ return CGSize(width: collectionView.contentSize.width, height: collectionView.contentSize.height)
+ }
     
     
 }

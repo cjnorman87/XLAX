@@ -24,11 +24,11 @@ extension UIView {
         }
         
         if let bottom = bottom {
-            self.bottomAnchor.constraint(equalTo: bottom, constant: paddingBottom).isActive = true
+            self.bottomAnchor.constraint(equalTo: bottom, constant: -paddingBottom).isActive = true
         }
         
         if let right = right {
-            self.rightAnchor.constraint(equalTo: right, constant: paddingRight).isActive = true
+            self.rightAnchor.constraint(equalTo: right, constant: -paddingRight).isActive = true
         }
         
         if let left = left {
@@ -141,6 +141,7 @@ extension UIView {
         translatesAutoresizingMaskIntoConstraints = false
         heightAnchor.constraint(equalToConstant: constant).isActive = true
     }
+    
 }
 
 struct AnchoredConstraints {
@@ -188,5 +189,15 @@ extension UIStackView {
     }
 }
 
-
-
+extension UITextField {
+    func setBottomBorder() {
+        self.borderStyle = .none
+        self.layer.backgroundColor = UIColor.white.cgColor
+        
+        self.layer.masksToBounds = false
+        self.layer.shadowColor = UIColor.gray.cgColor
+        self.layer.shadowOffset = CGSize(width: 0.0, height: 1.0)
+        self.layer.shadowOpacity = 1.0
+        self.layer.shadowRadius = 0.0
+    }
+}

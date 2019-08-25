@@ -27,4 +27,6 @@ pod "SplitRow"
 
 pod "SwiftyCam"
 
+pod 'GooglePlacesRow'
+
 end

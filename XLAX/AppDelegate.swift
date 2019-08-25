@@ -10,7 +10,7 @@ import UIKit
 import Firebase
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
@@ -21,8 +21,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         window = UIWindow()
         window?.rootViewController = MainTabBarViewController()
-        UINavigationBar.appearance().barTintColor = UIColor.rgb(red: 136, green: 206, blue: 235)
-        UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.white]
+//        UINavigationBar.appearance().barTintColor = UIColor.rgb(red: 136, green: 206, blue: 235)
+//        UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.white]
+//        UINavigationBar.appearance().tintColor = .white
+        
+        UINavigationBar.appearance().barTintColor = .white
+        UINavigationBar.appearance().tintColor = UIColor.rgb(red: 136, green: 206, blue: 235)
+        UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.rgb(red: 136, green: 206, blue: 235)]
+        UINavigationBar.appearance().largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.rgb(red: 136, green: 206, blue: 235)]
         return true
     }
 
